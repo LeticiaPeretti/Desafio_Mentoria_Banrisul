@@ -3,6 +3,8 @@ package CasosDeTeste;
 import Suporte.*;
 import Tarefas.*;
 import Utilitarios.EsperaFixa;
+import Utilitarios.GeradorEmail;
+
 import com.aventstack.extentreports.Status;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -11,9 +13,10 @@ import static Suporte.Relatorio.log;
 public class Desafio extends TesteBase {
 	private WebDriver driver = this.pegarDriver();
 
-	HomeTarefas homeTarefas = new HomeTarefas(driver);
+	HomeTarefas     homeTarefas     = new HomeTarefas(driver);
 	CarrinhoTarefas carrinhoTarefas = new CarrinhoTarefas(driver);
 	CadastroTarefas cadastroTarefas = new CadastroTarefas(driver);
+	GeradorEmail    geradorEmail    = new GeradorEmail();
 
 	@Test
 	public void desafio() throws InterruptedException {
@@ -28,7 +31,7 @@ public class Desafio extends TesteBase {
 			carrinhoTarefas.realizaChekoutAdicionaCarrinho();
 			carrinhoTarefas.validaValorCarrinho("$29.00");
 			carrinhoTarefas.realizaChekoutFinalizaCompra();
-			cadastroTarefas.criarConta("leticiaperettidesafio@hotmail.com");
+			cadastroTarefas.criarConta(geradorEmail.criaEmail());
 			cadastroTarefas.preencherCadastro("Leticia", "Peretti", "12345", "22", "12",
 					                          "1987", "Madre Adelia 64", "São Jeronimo", "12", "00000", "51995829800");
 			EsperaFixa.aguardaEmSegundos(5);
