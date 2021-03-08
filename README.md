@@ -14,7 +14,11 @@ O script de teste foi desenvolvido para a loja virtual Automation Practice e apr
 * JDK 8 - oracle.com
 <!--te-->
 
-Execução:
+* Selenium WebDriver - seleniumhq.org
+* WebDriver Manager - github.com/bonigarcia/webdrivermanager
+* JUnit - junit.org
+
+## Execução:
 <!--ts-->
 * Abra o projeto "AutomationPractice" com o Eclipse IDE
 * Expandir o pacote "src/test/java" no Package CasosDeTeste expandir a classe "Desafio"
@@ -23,7 +27,7 @@ Execução:
 * Dependências obtidas através do gerenciador de dependências do Gradle.
 <!--te-->
 
-PASSO A PASSO
+## PASSO A PASSO
 <!--ts-->
 * Acessar o site: www.automationpractice.com
 * Selecionar um produto
