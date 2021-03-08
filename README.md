@@ -3,6 +3,7 @@ Desafio de automação de testes realizado para o projeto Banrisul.
 
 O script de teste foi desenvolvido para a loja virtual Automation Practice e apresenta alguns conceitos de automação, tais como:
 
+<!--ts-->
 TestSuites
 TestCases
 Tasks
@@ -11,6 +12,7 @@ Pré requisitos
 Eclipse IDE - eclipse.org
 Gradle - gradle.org
 JDK 8 - oracle.com
+<!--te-->
 
 Execução:
 Abra o projeto "AutomationPractice" com o Eclipse IDE
