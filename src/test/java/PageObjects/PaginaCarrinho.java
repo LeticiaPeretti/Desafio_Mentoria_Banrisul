@@ -33,7 +33,7 @@ public class PaginaCarrinho {
 	
     }
     
-	public WebElement botaoProsseguirCheckouFinalizaCompra() {
+    public WebElement botaoProsseguirCheckouFinalizaCompra() {
 		return espera.visibilidadeDoElemento(By.xpath("//*[@id=\"center_column\"]/p[2]/a[1]/span"));
 	}
 }

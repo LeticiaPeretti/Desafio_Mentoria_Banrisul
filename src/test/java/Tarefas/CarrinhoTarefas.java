@@ -37,8 +37,14 @@ public class CarrinhoTarefas {
 
 	}
 	
-	public void validaValorCarrinho() {
-		Assertions.assertEquals(paginaCarrinho.pegarValorProduto().getText(), "$29.00");
+	public void validaValorCarrinho(String valor) {
+		try{
+		Assertions.assertEquals(paginaCarrinho.pegarValorProduto().getText(), valor);
+		Relatorio.log(Status.PASS, "Valor correto do produto", Screenshot.fullPageBase64(driver));
+        }catch (Exception e){
+
+            Relatorio.log(Status.FAIL,"Valor incorreto do produto", Screenshot.fullPageBase64(driver));
+        }
 
 	}
 	
@@ -46,8 +52,5 @@ public class CarrinhoTarefas {
 		paginaCarrinho.botaoProsseguirCheckouFinalizaCompra().click();
 	}
 	
-/*	System.out.println("1");
-	System.out.println(paginaCarrinho.pegarValorProduto().getText());
-	System.out.println("2");
-	*/
+
 }

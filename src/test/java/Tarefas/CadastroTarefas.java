@@ -6,7 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import com.aventstack.extentreports.Status;
+
 import PageObjects.PaginaCadastro;
+import Suporte.Relatorio;
+import Suporte.Screenshot;
 import Utilitarios.InteragirCombo;
 
 
@@ -51,7 +55,13 @@ public class CadastroTarefas {
 	}
 	
 	public void validaEnderecoEntrega(String rua) {
-		Assertions.assertEquals(paginaCadastro.enderecoEntregaRua().getText(), rua);
+		try {
+		  Assertions.assertEquals(paginaCadastro.enderecoEntregaRua().getText(), rua);
+		  Relatorio.log(Status.PASS, "Endereço de entrega correto", Screenshot.fullPageBase64(driver));
+        }catch (Exception e){
+
+            Relatorio.log(Status.FAIL,"Endereço de entrega errado", Screenshot.fullPageBase64(driver));
+        }
 	}
 	
 	public void aceitaTermo() {
@@ -63,7 +73,13 @@ public class CadastroTarefas {
 	}
 	
 	public void validaValorFinal(String valorTotal) {
-		Assertions.assertEquals(paginaCadastro.precoFinal().getText(), valorTotal);
+		try{
+		    Assertions.assertEquals(paginaCadastro.precoFinal().getText(), valorTotal);
+            Relatorio.log(Status.PASS, "Valor final correto", Screenshot.fullPageBase64(driver));
+        }catch (Exception e){
+
+        Relatorio.log(Status.FAIL,"Valor final errado", Screenshot.fullPageBase64(driver));
+        }
 	}
 	
 	public void selecionaTipoDePagamento() {
@@ -75,7 +91,14 @@ public class CadastroTarefas {
 	}
 	
 	public void validaConfirmacaoDeCompra(String mensagem) {
+		try{
 		Assertions.assertEquals(paginaCadastro.confirmaCompra().getText(), mensagem );
+		Relatorio.log(Status.PASS, "Compra confirmada com sucesso", Screenshot.fullPageBase64(driver));
+        }catch (Exception e){
+
+            Relatorio.log(Status.FAIL,"Compra não realizada", Screenshot.fullPageBase64(driver));
+        }
+
 	}
 
 	

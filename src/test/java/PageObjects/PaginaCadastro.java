@@ -20,7 +20,7 @@ public class PaginaCadastro {
 	
     }
 	public WebElement botaoCriarConta() {
-		return espera.visibilidadeDoElemento(By.xpath("//*[@id=\"SubmitCreate\"]/span"));
+		return driver.findElement(By.id("SubmitCreate"));
 	}
 	
 	public WebElement radioButtonMrs(){
@@ -32,11 +32,11 @@ public class PaginaCadastro {
 	
     }
 	public WebElement CampoUltimoNome(){
-    	return espera.visibilidadeDoElemento(By.id("customer_lastname"));
+		return driver.findElement(By.id("customer_lastname"));
 	
     }
 	public WebElement CampoSenha(){
-    	return espera.visibilidadeDoElemento(By.id("passwd"));
+		return driver.findElement(By.id("passwd"));
 	
     }
 	public WebElement CampoDiaNascimento(){
@@ -52,40 +52,39 @@ public class PaginaCadastro {
 	
     }
 	public WebElement EnderecoPrimeiroNome(){
-    	return espera.visibilidadeDoElemento(By.id("firstname"));
-	
+		return driver.findElement(By.id("firstname"));
     }
 	public WebElement EnderecoUltimoNome(){
-    	return espera.visibilidadeDoElemento(By.id("lastname"));
+		return driver.findElement(By.id("lastname"));
 	
     }
 	public WebElement Endereco(){
-    	return espera.visibilidadeDoElemento(By.id("address1"));
+		return driver.findElement(By.id("address1"));
 	
     }
 	public WebElement EnderecoCidade(){
-    	return espera.visibilidadeDoElemento(By.id("city"));
+		return driver.findElement(By.id("city"));
 	
     }
 	public WebElement EnderecoEstado(){
-    	return espera.visibilidadeDoElemento(By.id("id_state"));
+		return driver.findElement(By.id("id_state"));
 	
     }
 	public WebElement EnderecoCEP(){
-    	return espera.visibilidadeDoElemento(By.id("postcode"));
+		return driver.findElement(By.id("postcode"));
 	
     }
 	public WebElement EnderecoTelefone(){
-    	return espera.visibilidadeDoElemento(By.id("phone_mobile"));
+		return driver.findElement(By.id("phone_mobile"));
 	
     }
 	public WebElement EnderecoAlternativo(){
-    	return espera.visibilidadeDoElemento(By.id("alias"));
+		return driver.findElement(By.id("alias"));
 	
     }
 	
 	public WebElement BotaoRegistar(){
-    	return espera.visibilidadeDoElemento(By.id("submitAccount"));
+		return driver.findElement(By.id("submitAccount"));
 	
     }
 	
