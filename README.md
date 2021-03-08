@@ -41,6 +41,6 @@ PASSO A PASSO
 
 
 
-Selenium WebDriver - seleniumhq.org
-WebDriver Manager - github.com/bonigarcia/webdrivermanager
-JUnit - junit.org
+* Selenium WebDriver - seleniumhq.org
+* WebDriver Manager - github.com/bonigarcia/webdrivermanager
+* JUnit - junit.org
