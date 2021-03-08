@@ -28,7 +28,7 @@ public class Desafio extends TesteBase {
 			carrinhoTarefas.realizaChekoutAdicionaCarrinho();
 			carrinhoTarefas.validaValorCarrinho("$29.00");
 			carrinhoTarefas.realizaChekoutFinalizaCompra();
-			cadastroTarefas.criarConta("lephsilva@hotmail.com");
+			cadastroTarefas.criarConta("lephsilva22@hotmail.com");
 			cadastroTarefas.preencherCadastro("Leticia", "Peretti", "12345", "22", "12",
 					                          "1987", "Madre Adelia 64", "São Jeronimo", "12", "00000", "51995829800");
 			EsperaFixa.aguardaEmSegundos(5);
@@ -41,6 +41,8 @@ public class Desafio extends TesteBase {
 			cadastroTarefas.validaConfirmacaoDeCompra("Your order on My Store is complete.");
 		} catch (Exception e) {
 			log(Status.ERROR, e.getMessage(), Screenshot.fullPageBase64(driver));
+		} finally {
+			Relatorio.close();
 		}
 
 
