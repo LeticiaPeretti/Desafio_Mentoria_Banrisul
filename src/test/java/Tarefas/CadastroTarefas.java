@@ -2,6 +2,7 @@ package Tarefas;
 
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -57,10 +58,12 @@ public class CadastroTarefas {
 	public void validaEnderecoEntrega(String rua) {
 		try {
 		  Assertions.assertEquals(paginaCadastro.enderecoEntregaRua().getText(), rua);
+		  JavascriptExecutor scroll = (JavascriptExecutor)driver;
+			scroll.executeScript("scrollBy(0,350)", "");
 		  Relatorio.log(Status.PASS, "Endereço de entrega correto", Screenshot.fullPageBase64(driver));
         }catch (Exception e){
 
-            Relatorio.log(Status.FAIL,"Endereço de entrega errado", Screenshot.fullPageBase64(driver));
+            Relatorio.log(Status.FAIL,"Endereço de entrega incorreto", Screenshot.fullPageBase64(driver));
         }
 	}
 	
@@ -75,10 +78,12 @@ public class CadastroTarefas {
 	public void validaValorFinal(String valorTotal) {
 		try{
 		    Assertions.assertEquals(paginaCadastro.precoFinal().getText(), valorTotal);
+		    JavascriptExecutor scroll = (JavascriptExecutor)driver;
+			scroll.executeScript("scrollBy(0,320)", "");
             Relatorio.log(Status.PASS, "Valor final correto", Screenshot.fullPageBase64(driver));
         }catch (Exception e){
 
-        Relatorio.log(Status.FAIL,"Valor final errado", Screenshot.fullPageBase64(driver));
+        Relatorio.log(Status.FAIL,"Valor final incorreto", Screenshot.fullPageBase64(driver));
         }
 	}
 	
@@ -93,6 +98,8 @@ public class CadastroTarefas {
 	public void validaConfirmacaoDeCompra(String mensagem) {
 		try{
 		Assertions.assertEquals(paginaCadastro.confirmaCompra().getText(), mensagem );
+		JavascriptExecutor scroll = (JavascriptExecutor)driver;
+		scroll.executeScript("scrollBy(0,320)", "");
 		Relatorio.log(Status.PASS, "Compra confirmada com sucesso", Screenshot.fullPageBase64(driver));
         }catch (Exception e){
 

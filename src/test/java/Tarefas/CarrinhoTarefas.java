@@ -1,6 +1,7 @@
 package Tarefas;
 
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -19,6 +20,7 @@ public class CarrinhoTarefas {
 		
 		this.driver = driver;
 		paginaCarrinho = new PaginaCarrinho(driver);
+		
 	}
 	
 	public void realizaChekoutAdicionaCarrinho() {
@@ -40,6 +42,8 @@ public class CarrinhoTarefas {
 	public void validaValorCarrinho(String valor) {
 		try{
 		Assertions.assertEquals(paginaCarrinho.pegarValorProduto().getText(), valor);
+		JavascriptExecutor scroll = (JavascriptExecutor)driver;
+		scroll.executeScript("scrollBy(0,320)", "");
 		Relatorio.log(Status.PASS, "Valor correto do produto", Screenshot.fullPageBase64(driver));
         }catch (Exception e){
 
